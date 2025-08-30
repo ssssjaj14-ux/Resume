@@ -336,22 +336,6 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ resumeData, isLoggedIn }) => 
       </AnimatePresence>
     </>
   );
-
-  function formatMessage(content: string) {
-    const lines = content.split('\n');
-    return lines.map((line, index) => {
-      if (line.startsWith('**') && line.endsWith('**')) {
-        return <div key={index} className="font-bold text-blue-600 dark:text-blue-400 mb-1">{line.slice(2, -2)}</div>;
-      }
-      if (line.startsWith('• ')) {
-        return <div key={index} className="ml-4 mb-1">• {line.slice(2)}</div>;
-      }
-      if (line.match(/^\d+\./)) {
-        return <div key={index} className="mb-1">{line}</div>;
-      }
-      return line ? <div key={index} className="mb-1">{line}</div> : <div key={index} className="mb-2"></div>;
-    });
-  }
 };
 
 export default AIAssistant;
