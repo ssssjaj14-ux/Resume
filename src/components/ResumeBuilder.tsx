@@ -513,7 +513,7 @@ const ResumeBuilder: React.FC = () => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Quick Actions
               </h3>
-              
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               <motion.button
                 type="button"
                 onClick={() => setShowImporter(true)}
@@ -665,7 +665,7 @@ const ResumeBuilder: React.FC = () => {
 
               {/* AI Analysis Results */}
               {aiAnalysis && (
-                <motion.div
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-3 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg text-sm font-medium"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="card-base p-6 border-l-4 border-purple-500"
@@ -715,14 +715,14 @@ const ResumeBuilder: React.FC = () => {
                       </div>
                       
                       <div>
-                        <h4 className="font-semibold text-blue-600 mb-2">Suggestions</h4>
+                  <span>Import Resume</span>
                         <ul className="text-sm space-y-1">
                           {aiAnalysis.suggestions.map((suggestion: string, index: number) => (
                             <li key={index} className="flex items-center space-x-2">
                               <Sparkles className="w-4 h-4 text-blue-500" />
                               <span>{suggestion}</span>
                             </li>
-                          ))}
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg disabled:opacity-50 text-sm font-medium"
                         </ul>
                       </div>
                     </div>
@@ -730,19 +730,19 @@ const ResumeBuilder: React.FC = () => {
                 </motion.div>
               )}
 
-              {/* Form Content */}
+                      <span>Analyzing...</span>
               <div className="card-base p-6">
                 <div className="flex items-center space-x-2 mb-6">
                   {sections.find(s => s.id === activeSection)?.icon && (
                     <div className={`w-8 h-8 bg-gradient-to-r from-${sections.find(s => s.id === activeSection)?.color}-500 to-${sections.find(s => s.id === activeSection)?.color}-600 rounded-lg flex items-center justify-center`}>
-                      {React.createElement(sections.find(s => s.id === activeSection)!.icon, { className: "w-5 h-5 text-white" })}
-                    </div>
+                      <span>AI Analysis</span>
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3 rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg text-sm font-medium"
                   )}
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {sections.find(s => s.id === activeSection)?.label}
                   </h3>
                 </div>
-                
+                  <span>Preview Resume</span>
                 {renderActiveSection()}
               </div>
             </form>

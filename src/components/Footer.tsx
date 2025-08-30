@@ -226,32 +226,32 @@ const Footer: React.FC = () => {
               {/* Contact Information */}
               <div className="space-y-2">
                 <motion.a
-                  href={`mailto:${contactInfo.email}`}
+                  href="mailto:shakeelsk@pandascanpros.in"
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>{contactInfo.email}</span>
+                  <span>shakeelsk@pandascanpros.in</span>
                 </motion.a>
                 
                 <motion.a
-                  href={`tel:${contactInfo.phone}`}
+                  href="tel:8074015276"
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  <span>{contactInfo.phone}</span>
+                  <span>8074015276</span>
                 </motion.a>
                 
                 <motion.a
-                  href={contactInfo.linkedin}
+                  href="https://linkedin.com/in/shaik-mohammad-shakeel-ba5a771b1"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
                 >
                   <Linkedin className="w-4 h-4" />
-                  <span>LinkedIn Profile</span>
+                  <span>linkedin.com/in/shaik-mohammad-shakeel-ba5a771b1</span>
                   <ExternalLink className="w-3 h-3" />
                 </motion.a>
               </div>
@@ -351,7 +351,6 @@ const Footer: React.FC = () => {
               viewport={{ once: true }}
               className="flex items-center space-x-2 text-gray-400 text-sm"
             >
-              <span>© 2025 ResumeFlow. Made with</span>
               <span>© 2025 CareerPanda. Made with</span>
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
@@ -359,10 +358,9 @@ const Footer: React.FC = () => {
               >
                 <Heart className="w-4 h-4 text-red-500 fill-current" />
               </motion.div>
-              <span>for Indian students by</span>
               <span>for career success by</span>
               <motion.a
-                href={contactInfo.linkedin}
+                href="https://linkedin.com/in/shaik-mohammad-shakeel-ba5a771b1"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}

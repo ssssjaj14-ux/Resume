@@ -443,10 +443,10 @@ const CareerPortal: React.FC<CareerPortalProps> = ({ isLoggedIn, resumeData, onL
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12"
         >
           {[
-            { icon: Briefcase, label: 'Active Jobs', value: '200+', color: 'blue' },
-            { icon: Building, label: 'Companies', value: '50+', color: 'green' },
-            { icon: Users, label: 'Hired', value: '1000+', color: 'purple' },
-            { icon: Heart, label: 'Success Rate', value: '85%', color: 'red' }
+            { icon: Briefcase, label: 'Active Jobs', value: '200+', color: 'from-blue-500 to-blue-600' },
+            { icon: Building, label: 'Companies', value: '50+', color: 'from-green-500 to-green-600' },
+            { icon: Users, label: 'Hired', value: '1000+', color: 'from-purple-500 to-purple-600' },
+            { icon: Heart, label: 'Success Rate', value: '85%', color: 'from-red-500 to-red-600' }
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -455,7 +455,7 @@ const CareerPortal: React.FC<CareerPortalProps> = ({ isLoggedIn, resumeData, onL
               transition={{ delay: index * 0.1 }}
               className="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-lg text-center"
             >
-              <div className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-r from-${stat.color}-500 to-${stat.color}-600 rounded-xl flex items-center justify-center`}>
+              <div className={`w-12 h-12 mx-auto mb-4 bg-gradient-to-r ${stat.color} rounded-xl flex items-center justify-center`}>
                 <stat.icon className="w-6 h-6 text-white" />
               </div>
               <div className="text-2xl font-bold text-gray-900 dark:text-white">
